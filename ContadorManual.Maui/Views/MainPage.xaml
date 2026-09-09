@@ -5,10 +5,9 @@
              Title="Contador Manual"
 >
 
-    <StackLayout Orientation="Vertical"  Spacing="12" Margin="12" Padding="16">
+    <VerticalStackLayout Spacing="12" Margin="12" Padding="16">
         <Label 
             Text="Conteo:" 
-            
             HorizontalOptions="Fill"
             VerticalOptions="Fill"
             FontSize="Medium"
@@ -36,5 +35,5 @@
             Clicked="OnReiniciarButtonClicked"
             />
         </StackLayout>
-    </StackLayout>
+    <VerticalStackLayout/>
 </ContentPage>
