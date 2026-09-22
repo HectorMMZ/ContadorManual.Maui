@@ -14,16 +14,15 @@
         />
         <Border  Stroke="Gray" StrokeThickness="2">
             <Label 
-                Text="10"
+                Text="{Binding Path=Conteo}"
                 Padding="0, 24"
                 FontSize="Large"
                 FontAttributes="Bold"
                 HorizontalOptions="Center"
-                x:Name="ConteoLabel"
             />
         </Border>
-        
-        <StackLayout Orientation="Horizontal"  HorizontalOptions="Center" Spacing="24" Margin="0, 24, 0, 0">
+
+        <VerticalStackLayout HorizontalOptions="Center" Spacing="24" Margin="0, 24, 0, 0">
 
             <Button
             Text="Contar"
@@ -34,6 +33,6 @@
             Text="Reiniciar"
             Clicked="OnReiniciarButtonClicked"
             />
-        </StackLayout>
-    <VerticalStackLayout/>
+        </VerticalStackLayout>
+    </VerticalStackLayout>
 </ContentPage>

@@ -12,19 +12,17 @@ public partial class MainPage : ContentPage
 		// Inicializar el contador
 		InitializeComponent();
 		_contador = new Contador();
-        ConteoLabel.Text = _contador.Conteo.ToString();
+		BindingContext = _contador; // Lo que estoy haciendo es que mi destino me esta sirviendo para decir quien es el objeto fuente del enlace
     }
 
 	// Codigo del manejador de eventos
     private void OnContarButtonClicked(object sender, EventArgs e)
 	{
 		_contador.Contar();
-		ConteoLabel.Text = _contador.Conteo.ToString();
 	}
 
 	private void OnReiniciarButtonClicked(object sender, EventArgs e)
     {
 		_contador.Reiniciar();
-        ConteoLabel.Text = _contador.Conteo.ToString();
     }
 }
