@@ -7,13 +7,14 @@ namespace ContadorManual.Maui.Models
 {
     public class Contador : INotifyPropertyChanged
     {
-        // Variable de instancia
+        // Variables de instancia
         private int _conteo;
+        private int _incremento;
 
         // Variable que representara un metodo a una notificacion
-        public event PropertyChangedEventHandler? PropertyChanged;
+        public event PropertyChangedEventHandler? PropertyChanged; // Delegado que guarda un metodo
 
-        // Propiedad publica
+        // Propiedades publicas
         public int Conteo
         {
             // Propiedad de lectura
@@ -29,15 +30,29 @@ namespace ContadorManual.Maui.Models
             }
         }
 
-        // Constructor
-        public Contador() 
+        public int Incremento
         {
-            Conteo = 0;
+            get => _incremento;
+
+            set
+            {
+                if (_incremento != value)
+                {
+                    _incremento = value;
+                }
+            }
+        }
+
+        // Constructor
+        public Contador(int valorIncial = 0, int incremento = 1) 
+        {
+            Conteo = valorIncial;
+            Incremento = incremento;
         }
 
         public void Contar()
         {
-            Conteo++;   // Conteo = Contero + 1;
+            Conteo = Conteo + Incremento;
         }
 
         public void Reiniciar()
@@ -56,3 +71,5 @@ namespace ContadorManual.Maui.Models
         }
     }
 }
+
+// Todo esto nos permite separa la interfaz de usuario del manejo de los objetos
